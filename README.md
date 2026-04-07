@@ -2,6 +2,7 @@
 
 ## Table of Contents
 1. [Phishing Analysis Fundamentals](#phishing-analysis-fundamentals)
+2. [Phishing Emails in Action](#phishing-emails-in-action)
 
 ## Phishing Analysis Fundamentals
 ### The Email Address
@@ -79,3 +80,39 @@
 1. What attack, signified by the acronym BEC, uses a compromised email to trick employees into fraud?
 
     The answer is: `Business Email Compromise`.
+
+
+## Phishing Emails in Action
+### Cancel Your Order
+1. Who is listed as the Merchant in the email body?
+
+    The answer is: `Amazing Stuff`.
+
+### Track Your Package
+1. What root domain does the hyperlink in the above example point to? Be sure to defang the URL.
+
+    The answer is: `devret[.]xyz`.
+
+### Download Document Here
+1. The attacker deployed a fake portal to capture and exfiltrate user credentials. What is this type of attack called?
+
+    The answer is: `Credential Harvesting`.
+
+### Your Account Is on Hold
+1. What is the actual sender email address hidden behind the Netllx billing display name?
+
+    The answer is: `z99@musacombi.online`.
+
+### Your Recent Purchase
+1. What does the acronym BCC stand for?
+
+    The answer is: `Blind Carbon Copy`.
+
+2. What is the file extension of the attachment?
+
+    The answer is: `.dot`.
+
+### Scheduled Shipment
+1. What is the name of the executable that the Excel attachment attempts to run?
+
+    The answer is: `regasms.exe`.
