@@ -4,6 +4,7 @@
 1. [Phishing Analysis Fundamentals](#phishing-analysis-fundamentals)
 2. [Phishing Emails in Action](#phishing-emails-in-action)
 3. [Phishing Analysis Tools](#phishing-analysis-tools)
+4. [Phishing Prevention](#phishing-prevention)
 
 ## Phishing Analysis Fundamentals
 ### The Email Address
@@ -201,3 +202,81 @@
 6. What vulnerability does this malicious attachment attempt to exploit?
 
     The answer is: `cve-2017-11882`.
+
+
+## Phishing Prevention
+### Sender Policy Framework (SPF)
+1. Based on TryHackMe's SPF record above, how many domains are authorized to send email on its behalf?
+
+    The answer is: `3`.
+
+2. What is the intended action of an email that returns a SoftFail verification result?
+
+    The answer is: `Flag`.
+
+### DomainKeys Identified Mail (DKIM)
+1. Based on the sample header above, what is the reason for the permerror?
+
+    The answer is: `no key for signature`.
+
+### Domain-based Message Authentication, Reporting, and Conformance (DMARC)
+1. Which DMARC policy provides the greatest amount of protection by blocking emails that fail the DMARC check?
+
+    The answer is: `p=reject`.
+
+### Secure/Multipurpose Internet Mail Extensions (S/MIME)
+1. Which S/MIME component ensures that only the intended recipient can read the contents of an email message?
+
+    The answer is: `Encryption`.
+
+### Analyzing SMTP Responses
+1. Which Wireshark filter can you use to narrow down your results based on SMTP response codes?
+
+    The answer is: `smtp.response.code`.
+
+2. How many packets in the capture contain the SMTP response code 220 Service ready?
+
+    We can use this filter in Wireshark to find the answer: `smtp.response.code == 220`. The answer is: `19`.
+
+3. One SMTP response indicates that an email was blocked by spamhaus.org. What response code did the server return?
+
+    To solve this, we can search string that contains `spamhaus`. The answer is `553`.
+
+4. Based on the packet from the previous question, what is the full Response code: message?
+
+    The answer is: `Requested action not taken: mailbox name not allowed (553)`.
+
+5. Search for response code 552. How many messages were blocked for presenting potential security issues?
+
+    The answer is: `6`.
+
+### Inspecting Email and Attachments
+1. How many SMTP packets are available for analysis?
+
+    We can use the filter `smtp` in Wireshark. The answer is: `512`.
+
+2. What is the name of the attachment in packet 270?
+
+    The answer is: `document.zip`.
+
+3. According to the message in packet 270, which Host IP address is not responding, making the message undeliverable?
+
+    The answer is: `212.253.25.152`.
+
+4. By filtering for imf, which email client was used to send the message containing the attachment attachment.scr?
+
+    We can use this filter to get the email that contains the attachment:
+    
+    ```
+    imf contains "attachment.scr"
+    ```
+    The answer is: `Microsoft Outlook Express 6.00.2600.0000`.
+
+5. Which type of encoding is used for this potentially malicious attachment?
+
+    The answer is: `base64`.
+
+### How Organizations stop Phishing
+1. A security team wants to implement a control to detect hidden malware inside email attachments. They need a way to analyze suspicious files without risking infection on real systems. Which protective technique would allow them to observe a file's behavior safely?
+
+    The answer is: `Sandboxing`.
