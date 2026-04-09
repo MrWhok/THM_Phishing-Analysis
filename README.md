@@ -3,6 +3,7 @@
 ## Table of Contents
 1. [Phishing Analysis Fundamentals](#phishing-analysis-fundamentals)
 2. [Phishing Emails in Action](#phishing-emails-in-action)
+3. [Phishing Analysis Tools](#phishing-analysis-tools)
 
 ## Phishing Analysis Fundamentals
 ### The Email Address
@@ -116,3 +117,87 @@
 1. What is the name of the executable that the Excel attachment attempts to run?
 
     The answer is: `regasms.exe`.
+
+
+## Phishing Analysis Tools
+### Email Header Analysis
+1. Use Talos Reputation Center (opens in new tab) to look up malware-test.com. What is the web reputation assigned to this domain?
+
+    The answer is: `Neutral`.
+
+### Email Body Analysis
+1. What command can you use in a Linux environment to obtain the SHA256 hash value of an attachment?
+
+    The answer is: `sha256sum`.
+
+### Using PhiShTool
+1. According to the VirusTotal analysis from above, which vendor categorized the URLs as phishing?
+
+    The answer is: `SafeToOpen`.
+
+### Your Account Is on Hold 
+1. What reputable brand is this email tailored to impersonate?
+
+    The answer is: `Netflix`.
+
+2. Based on the email headers, who is the intended recipient of this message?
+
+    The answer is: `redacted@yahoo.com`.
+
+3. In Thunderbird mail use View → Message Source. What is the Received: from IP address?
+
+    The answer is: `10.197.37.234`.
+
+4. Check out the Return-Path field in the message source. What would you consider a domain of interest based on this field?
+
+    The answer is: `etekno.xyz`.
+
+5. Investigate the UPDATE ACCOUNT NOW button. What is the shortened URL?
+
+    The answer is: `https://t.co/yuxfZm8KPg?amp=1`.
+
+### Update Payment Details
+1. How does ANYRUN classify this suspected phishing email?
+
+    The answer is: `Suspicious activity`.
+
+2. What is the name of the PDF attachment?
+
+    The answer is: `Payment-updateid.pdf`.
+
+3. Investigate the email attachment. What is the SHA256 hash of the PDF file?
+
+    The answer is `CC6F1A04B10BCB168AEEC8D870B97BD7C20FC161E8310B5BCE1AF8ED420E2C24`.
+
+4. Check out the ANYRUN text report on the phishing email. Which IP address associated with the process AcroRd32.exe is flagged as malicious?
+
+    The answer is: `2.16.107.24`.
+
+5. Continue investigating the text report. Which Windows process is classed as Potentially Bad Traffic?
+
+    The answer is: `svchost.exe`.
+
+### Excel Executable
+1. How does ANYRUN classify the .xlsx attachment?
+
+    The answer is: `Malicious activity`.
+
+2. What is the file name of the Excel attachment?
+
+    The answer is: `CBJ200620039539.xlsx`.
+
+3. Investigate the Excel attachment. What is the SHA256 hash value?
+
+    The answer is `5f94a66e0ce78d17afc2dd27fc17b44b3ffc13ac5f42d3ad6a5dcfb36715f3eb`.
+
+4. Check out the ANYRUN text report. What IP address is associated with the malicious domain biz9holdings.com?
+
+    The answer is: `204.11.56.48`.
+
+5. Which other domain is classified as malicious?
+
+    The answer is: `findresults.site`.
+
+6. What vulnerability does this malicious attachment attempt to exploit?
+
+    The answer is: `cve-2017-11882`.
