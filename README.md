@@ -5,6 +5,7 @@
 2. [Phishing Emails in Action](#phishing-emails-in-action)
 3. [Phishing Analysis Tools](#phishing-analysis-tools)
 4. [Phishing Prevention](#phishing-prevention)
+5. [The Greenholt Phish](#the-greenholt-phish)
 
 ## Phishing Analysis Fundamentals
 ### The Email Address
@@ -280,3 +281,57 @@
 1. A security team wants to implement a control to detect hidden malware inside email attachments. They need a way to analyze suspicious files without risking infection on real systems. Which protective technique would allow them to observe a file's behavior safely?
 
     The answer is: `Sandboxing`.
+
+
+## The Greenholt Phish
+### A Message that doesn't Add Up
+1. What is the Transfer Reference Number listed in the email's Subject line?
+
+    The answer is: `09674321`.
+
+2. What is the display name of the sender?
+
+    The answer is: `Mr. James Jackson`.
+
+3. Continue investigating the email headers. What is the sender's email address?
+
+    The answer is: `info@mutawamarine.com`.
+
+4. What email address will receive a reply to this email?
+
+    The answer is: `info.mutawamarine@mail.com`.
+
+5. Begin analyzing the message source. What is the originating IP address of this email?
+
+    The answer is: `192.119.71.157`.
+
+6. Investigate the IP address from the previous question. Who is the owner of the originating IP?
+
+    We can use [this](https://whatismyipaddress.com/ip/192.119.71.157) website and type the IP address to find the answer. The answer is: `Hostwinds LLC`.
+
+7. Run an SPF record check on the Return-Path domain identified in the email headers. What is the full SPF record for this domain?
+
+    We can copy the Return-Path domain, `mutawamarine.com`, and use [this](https://dmarcian.com/spf-survey/) website to check the SPF record. The answer is: `v=spf1 include:spf.protection.outlook.com -all`.
+
+8. Perform a DMARC lookup for the Return-Path domain found in the email headers. What is the complete DMARC record for this domain?
+
+    We can copy the Return-Path domain, `mutawamarine.com`, and use [this](https://dmarcian.com/domain-checker/) website to check the DMARC record. The answer is: `v=DMARC1; p=quarantine; fo=1`.
+
+9. What is the file name of the attachment found in the email?
+
+    The answer is: `SWT_#09674321____PDF__.CAB`.
+
+10. Download the attachment to your virtual environment. Using the sha256sum command, what is the SHA256 hash of the file?
+
+    The answer is `2e91c533615a9bb8929ac4bb76707b2444597ce063d84a4b33525e25074fff3f`.
+
+11. Investigate the file hash from the previous question using VirusTotal (opens in new tab). What is the attachment's file size in KB (e.g., 122.31 KB)?
+
+    We can copy the hash value and use [this](https://www.virustotal.com/gui/home/search) website to check the file size. The answer is: `400.26 KB`.
+
+12. Continue your research on the file. What is the actual file type of the attachment?
+
+    The answer is: `RAR`.
+
+
+
