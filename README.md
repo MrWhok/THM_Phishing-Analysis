@@ -6,6 +6,7 @@
 3. [Phishing Analysis Tools](#phishing-analysis-tools)
 4. [Phishing Prevention](#phishing-prevention)
 5. [The Greenholt Phish](#the-greenholt-phish)
+6. [Snapped Phish-ing Line](#snapped-phish-ing-line)
 
 ## Phishing Analysis Fundamentals
 ### The Email Address
@@ -334,4 +335,48 @@
     The answer is: `RAR`.
 
 
+## Snapped Phish-ing Line
+### A Series of Suspicious Emails
+1. Begin reviewing the emails in the phish-emails folder on your desktop. Which individual received the email regarding a Quote for Services Rendered?
 
+    The answer is: `William McClean`.
+
+2. What email address was used by the adversary to send the phishing emails?
+
+    The answer is: `Accounts.Payable@groupmarketingonline.icu`.
+
+3. Investigate the attachment in the email addressed to Zoe Duncan. What is the root domain of the redirection URL found within the file?
+
+    The answer is: `kennaroads.buzz`.
+
+4. Open the attachment in your VM web browser. Which company is the login page impersonating?
+
+    The answer is: `Microsoft`.
+
+5. Let’s check if the attacker left any files exposed on the same website. Navigate to the /data directory. What is the name of the archive file?
+
+    The answer is: `Update365.zip`.
+
+6. Download the phishing kit archive to your virtual environment. Using the sha256sum command, what is the SHA256 hash of the file?
+
+    The answer is `ba3c15267393419eb08c7b2652b8b6b39b406ef300ae8a18fee4d16b19ac9686`.
+
+7. Investigate the file hash from the previous question using VirusTotal (opens in new tab). Aside from phishing, what other threat category is assigned to the ZIP archive?
+
+    The answer is: `Trojan`.
+
+8. Review the VirusTotal Details page for the phishing kit. How many files are contained within the archive?
+
+    The answer is: `49`.
+
+9. Let’s see if the attacker has exposed any captured credentials. Navigate to the /data/Update365/ directory and investigate the log file. What is the email address of the user who submitted their credentials more than once?
+
+    The answer is: `michael.ascot@swiftspend.finance`.
+
+10. Extract the phishing kit archive and locate the submit.php file. What email address is used by the adversary to collect compromised credentials?
+
+    The answer is: `m3npat@yandex.com`.
+
+11. Return to the phishing URL and locate the flag.txt file. Using CyberChef (opens in new tab) to decode the flag, what is the secret value?
+
+    We can visit the URL `http://kennaroads.buzz/data/Update365/office365/flag.txt` to get the encoded flag value. Then, we can use CyberChef to decode it. The answer is: `THM{pL4y_w1Th_tH3_URL}``.
